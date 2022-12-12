@@ -26,7 +26,7 @@ string[] FilterArray(string[] oldArray)
 {
     bool[] flagsArr = new bool[oldArray.Length];
     int totalNum = 0;
-    for (int i = 0; i < oldArray.length; i++)
+    for (int i = 0; i < oldArray.Length; i++)
     {
         if (oldArray[i].Length <= 3) 
         {
@@ -36,8 +36,8 @@ string[] FilterArray(string[] oldArray)
     }
     string[] newArray = new string[totalNum];
     int k = 0;
-    if (k > 0)
-    for (int i = 0; i < flagsArr.length; i++)
+    if (totalNum > 0)
+    for (int i = 0; i < flagsArr.Length; i++)
     {
         if (flagsArr[i]) 
         {
@@ -49,6 +49,10 @@ string[] FilterArray(string[] oldArray)
 }
 
 string[] myArray = InputArray();
+Console.WriteLine("Input -> Result: ");
 PrintArray(myArray);
 string[] filteredArray = FilterArray(myArray);
+Console.Write(" -> ");
 PrintArray(filteredArray);
+
+
