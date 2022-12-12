@@ -22,6 +22,33 @@ void PrintArray(string[] inputArray)
     Console.Write("]");
 }
 
+string[] FilterArray(string[] oldArray)
+{
+    bool[] flagsArr = new bool[oldArray.Length];
+    int totalNum = 0;
+    for (int i = 0; i < oldArray.length; i++)
+    {
+        if (oldArray[i].Length <= 3) 
+        {
+            flagsArr[i] = true;
+            totalNum ++;
+        }
+    }
+    string[] newArray = new string[totalNum];
+    int k = 0;
+    if (k > 0)
+    for (int i = 0; i < flagsArr.length; i++)
+    {
+        if (flagsArr[i]) 
+        {
+            newArray[k] = oldArray[i];
+            k++;
+        }
+    }
+    return newArray;
+}
 
-
-PrintArray(InputArray());
+string[] myArray = InputArray();
+PrintArray(myArray);
+string[] filteredArray = FilterArray(myArray);
+PrintArray(filteredArray);
